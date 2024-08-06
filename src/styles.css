@@ -1,0 +1,287 @@
+/* prism.css download from Prism.com >> */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  overflow-y: auto;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8292a2;
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+  color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #e6db74;
+}
+
+.token.keyword {
+  color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/**App**/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #131212;
+}
+
+.heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222; 
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f8f8f2;
+  font-family: "Roboto", sans-serif;
+}
+
+.heading h1 {
+  margin: 0;
+  color: #66d9ef;
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.heading p {
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
+.heading fieldset {
+  margin: 5px 10px;
+  padding-left: 10px;
+  min-width: 300px;
+  width: calc(100% - 80px);
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 5px;
+  color: #f8f8f2;
+  background-color: #555;
+  align-self: flex-start;
+}
+
+.heading legend {
+  color: #66d9ef;
+  padding: 0 5px;
+  font-size: 1.3rem;
+}
+
+.heading label {
+  color: #f8f8f2;
+  padding: 2px 5px;
+  font-size: 1rem;
+}
+
+.heading input[type="radio"] {
+  accent-color: #66d9ef;
+}
+
+.container-editor {
+  margin-top: 150px;
+  padding: 10px;
+  overflow: auto;
+  height: calc(100% - 150px);
+}
+
+/** Code editor >> */
+.code-edit-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 500px; /* Initial height */
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 5px;
+  background-color: hsl(212, 35%, 95%);
+  margin: 1.67em auto;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.container-editor {
+  overflow: auto;
+}
+
+.line-numbers {
+  counter-reset: line;
+  padding: 1rem 0;
+  width: 60px;
+  background-color: #2d2d2d;
+  color: #999;
+  text-align: center;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+.line-numbers pre {
+  margin: 0;
+  padding: 0;
+}
+
+.code-input,
+.code-output {
+  position: absolute;
+  top: 0;
+  left: 60px; 
+  width: calc(100% - 60px); 
+  height: auto;
+  min-height: 480px;
+  padding: 1rem;
+  border: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1rem;
+  background: transparent;
+  white-space: pre-wrap;
+  line-height: 1.5em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.code-input {
+  opacity: 1;
+  margin: 0;
+  color: hsl(0, 0%, 40%);
+  resize: none;
+  outline: none;
+  background-color: black;
+}
+
+.code-output {
+  pointer-events: none;
+  z-index: 3;
+  margin: 0;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+code {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  display: block;
+  color: hsl(0, 0%, 40%);
+  font-family: "PT Mono", monospace;
+}
+
+/* overrides */
+.code-edit-container :not(pre) > code[class*="language-"],
+.code-edit-container pre[class*="language-"] {
+  background: transparent;
+  margin: 0;
+}
